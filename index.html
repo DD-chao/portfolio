@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邓超然 - 用户研究作品集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /*
+     Palette: Warm Gray "高级灰"
+     Inspired by stone, architecture, and refined minimalism.
+     Accent pulled from the natural tones of the portrait.
+  */
+  :root {
+    --cream:        #FAF8F5;
+    --warm-gray:    #F3F1EC;
+    --surface:      #FFFFFF;
+    --dark:         #1C1B1A;
+    --dark-surface: #252423;
+    --text:         #1F1D1A;
+    --text-muted:   #7D7974;
+    --text-subtle:  #A8A49E;
+    --border:       #E5E2DD;
+    --border-light: rgba(0,0,0,0.05);
+    --accent:       #8B7E74;
+    --accent-light: #C4B8AC;
+    --accent-dark:  #5C5047;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-xl: 28px;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.05);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.07);
+    --nav-height: 48px;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.533;
+    color: var(--text);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Navigation ── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(250,248,245,0.70);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .nav-inner {
+    max-width: 1080px;
+    width: 100%;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links { display:flex; gap:32px; list-style:none; }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent-dark); }
+
+  /* ── Section ── */
+  .section { padding: 120px 0; position: relative; }
+  .section-inner { max-width: 1024px; margin: 0 auto; padding: 0 24px; }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .section-headline {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .section-subhead {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 520px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--dark);
+    color: #FFFFFF;
+    padding: 96px 0 72px;
+    padding-top: calc(var(--nav-height) + 72px);
+    position: relative;
+  }
+
+  .hero-bg-glow {
+    position: absolute;
+    top: 0; right: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(139,126,116,0.06) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero .section-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  /* ── Small circular photo ── */
+  .hero-photo-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 28px;
+  }
+
+  .hero-photo {
+    width: 132px;
+    height: 132px;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  .hero-photo-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.10);
+    z-index: 1;
+  }
+
+  .hero-name {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+    font-weight: 400;
+    color: #A8A49E;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+
+  .hero-affiliation {
+    font-size: 14px;
+    color: #7D7974;
+    margin-bottom: 36px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .hero-stat-num {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: #A8A49E;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-contact {
+    margin-top: 36px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    font-size: 14px;
+    color: #7D7974;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-contact a {
+    color: #A8A49E;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .hero-contact a:hover { color: #FFFFFF; }
+
+  /* ── Directory Cards ── */
+  .directory {
+    padding: 80px 0 80px;
+    background: var(--cream);
+  }
+
+  .directory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .dir-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .dir-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-light);
+  }
+
+  .dir-card .dir-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .dir-card .dir-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .dir-card .dir-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+
+  .dir-card .dir-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: -0.01em;
+    line-height: 1.5;
+  }
+
+  /* ── Project Header ── */
+  .project-header { text-align: center; margin-bottom: 72px; }
+  .project-header .section-headline { margin-bottom: 16px; }
+  .project-header .section-subhead { margin: 0 auto; }
+
+  /* ── Feature Row ── */
+  .feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+    margin-bottom: 72px;
+  }
+
+  .feature-visual {
+    background: linear-gradient(150deg, #F3F1EC 0%, #ECEAE4 100%);
+    border-radius: var(--radius-xl);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+  }
+
+  .feature-visual.auto-height {
+    aspect-ratio: auto;
+  }
+
+  .dark-section .feature-visual {
+    background: linear-gradient(150deg, #2A2928 0%, #1F1E1D 100%);
+    border-color: rgba(255,255,255,0.04);
+  }
+
+  .feature-visual-content {
+    text-align: center;
+    padding: 32px;
+    color: var(--text-muted);
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    line-height: 1.5;
+  }
+
+  .dark-section .feature-visual-content { color: #8A857E; }
+
+  .feature-visual-content .big-num {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .dark-section .feature-visual-content .big-num { color: #FFFFFF; }
+
+  .feature-text h3 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  .feature-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-list {
+    list-style: none;
+    margin: 24px 0;
+  }
+
+  .feature-list li {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 7px 0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ── Stats Row ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 72px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .dark-section .stats-row { border-color: rgba(255,255,255,0.06); }
+
+  .stat-item {
+    background: var(--surface);
+    padding: 32px 24px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .dark-section .stat-item {
+    background: var(--dark-surface);
+    border-color: rgba(255,255,255,0.06);
+  }
+
+  .stat-num {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .stat-num.primary { color: var(--text); }
+  .dark-section .stat-num.primary { color: #FFFFFF; }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: -0.01em;
+    line-height: 1.45;
+  }
+
+  /* ── Method Steps ── */
+  .method-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    margin-bottom: 72px;
+  }
+
+  .method-step {
+    text-align: center;
+    padding: 32px 14px;
+    background: var(--surface);
+    border-radius: var(--radius-md);
+  }
+
+  .dark-section .method-step { background: var(--dark-surface); }
+
+  .method-step-index {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--warm-gray);
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-dark);
+  }
+
+  .dark-section .method-step-index {
+    background: #3A3835;
+    color: var(--accent-light);
+  }
+
+  .method-step-num {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .method-step-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+
+  .dark-section .method-step-name { color: #EBE8E3; }
+
+  .method-step-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  .dark-section .method-step-desc { color: #8A857E; }
+
+  /* ── Insight Callout ── */
+  .insight-callout {
+    background: linear-gradient(140deg, #F6F3EF 0%, #FAF8F5 100%);
+    border-radius: var(--radius-xl);
+    padding: 36px 44px;
+    margin-bottom: 72px;
+    border: 1px solid var(--border);
+  }
+
+  .dark-section .insight-callout {
+    background: linear-gradient(140deg, #2D2B29 0%, #252423 100%);
+  }
+
+  .insight-callout .insight-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .insight-callout p {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  .dark-section .insight-callout p { color: #E5E0DA; }
+
+  .insight-callout p strong { color: var(--accent-dark); }
+  .dark-section .insight-callout p strong { color: var(--accent-light); }
+
+  /* ── Pipeline ── */
+  .pipeline-visual {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 72px;
+  }
+
+  .pipeline-card {
+    flex: 1;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .pipeline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .pipeline-card .p-index {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+
+  .pipeline-card .p-role {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+
+  .pipeline-card .p-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  .pipeline-arrow {
+    font-size: 22px;
+    color: var(--border);
+    flex-shrink: 0;
+    font-weight: 300;
+  }
+
+  /* ── Terminal ── */
+  .terminal-window {
+    background: #1E1D1C;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+    margin-bottom: 72px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .terminal-header {
+    background: #2A2928;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .terminal-dot:nth-child(1) { background: #E06C75; }
+  .terminal-dot:nth-child(2) { background: #E5C07B; }
+  .terminal-dot:nth-child(3) { background: #98C379; }
+
+  .terminal-title {
+    margin-left: 10px;
+    font-size: 11px;
+    color: #8A857E;
+    letter-spacing: -0.01em;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .terminal-body {
+    padding: 28px 32px;
+    font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 12.5px;
+    line-height: 1.9;
+    color: #C4BFB8;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  .terminal-body .t-dim { color: #7D7974; }
+  .terminal-body .t-cyan { color: #8BB5B0; }
+  .terminal-body .t-amber { color: #C4A87C; }
+  .terminal-body .t-green { color: #8CA87C; }
+  .terminal-body .t-white { color: #E5E0DA; }
+
+  /* ── Tags ── */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 16px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 13px;
+    border-radius: 16px;
+    letter-spacing: -0.01em;
+    background: var(--warm-gray);
+    color: var(--text);
+  }
+
+  /* ── Skills Grid ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .skill-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .skill-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .skill-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .skill-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── Backgrounds ── */
+  .bg-dark { background: var(--dark); color: #FFFFFF; }
+  .bg-warm-gray { background: var(--warm-gray); }
+  .bg-cream { background: var(--cream); }
+
+  .bg-dark .section-headline { color: #FFFFFF; }
+  .bg-dark .section-subhead { color: #A8A49E; }
+  .bg-dark .section-label { color: var(--accent-light); }
+  .bg-dark .feature-text h3 { color: #FFFFFF; }
+  .bg-dark .feature-text p { color: #A8A49E; }
+  .bg-dark .feature-list li { color: #8A857E; }
+  .bg-dark .feature-list li::before { background: var(--accent-light); }
+  .bg-dark .tag { background: rgba(255,255,255,0.06); color: #C4BFB8; }
+
+  /* ── Contrast row (before/after) ── */
+  .contrast-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 48px 0;
+  }
+
+  .contrast-col {
+    padding: 28px 32px;
+    border-radius: var(--radius-lg);
+  }
+
+  .contrast-col.before {
+    background: #F9F5F2;
+    border: 1px solid #EBE3DA;
+  }
+
+  .contrast-col.after {
+    background: #F4F6F3;
+    border: 1px solid #D8E4D5;
+  }
+
+  .contrast-col h5 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .contrast-col.before h5 { color: #A89080; }
+  .contrast-col.after h5 { color: #7A9A6E; }
+
+  .contrast-col ul {
+    list-style: none;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+
+  .contrast-col li { padding: 3px 0; }
+
+  /* ── Footer ── */
+  .footer {
+    background: var(--dark);
+    padding: 48px 0;
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: 13px;
+    color: #8A857E;
+    margin-bottom: 3px;
+    letter-spacing: -0.01em;
+  }
+
+  .footer .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #E5E0DA;
+    margin-bottom: 8px;
+  }
+
+  /* ── Animations ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Responsive ── */
+  @media (max-width:834px) {
+    .hero { padding: 72px 0 56px; padding-top: calc(var(--nav-height) + 48px); }
+    .hero-name { font-size:36px; }
+    .hero-title { font-size:16px; }
+    .hero-photo { width:108px; height:108px; }
+    .hero-stats { gap:28px; }
+    .hero-stat-num { font-size:28px; }
+
+    .directory-grid { grid-template-columns:1fr; gap:10px; }
+
+    .section-headline { font-size:36px; }
+    .section { padding:72px 0; }
+
+    .feature-visual.auto-height { aspect-ratio:auto; max-height:500px; }
+    .feature-row { grid-template-columns:1fr; gap:40px; }
+    .stats-row { grid-template-columns:repeat(2,1fr); }
+    .stat-item:nth-child(2) { border-right:none; }
+    .method-steps { grid-template-columns:repeat(3,1fr); gap:8px; }
+    .pipeline-visual { flex-direction:column; }
+    .pipeline-arrow { transform:rotate(90deg); }
+    .skills-grid { grid-template-columns:1fr 1fr; }
+    .contrast-row { grid-template-columns:1fr; }
+  }
+
+  @media (max-width:480px) {
+    .hero-name { font-size:28px; }
+    .section-headline { font-size:28px; }
+    .hero-stats { flex-direction:column; gap:18px; }
+    .stats-row { grid-template-columns:1fr 1fr; }
+    .method-steps { grid-template-columns:repeat(2,1fr); }
+    .skills-grid { grid-template-columns:1fr; }
+    .nav-links { gap:16px; }
+    .nav-links a { font-size:11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">邓超然</a>
+    <ul class="nav-links">
+      <li><a href="#published">用户洞察</a></li>
+      <li><a href="#submitted">人因实验</a></li>
+      <li><a href="#agent">研究工具</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="section-inner">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-ring"></div>
+      <img class="hero-photo" src="照片.jpg" alt="邓超然" loading="eager">
+    </div>
+    <h1 class="hero-name">邓超然</h1>
+    <p class="hero-title">用户研究 &middot; 人机工效学 &middot; 数据驱动设计</p>
+    <p class="hero-affiliation">南昌大学 建筑与设计学院</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">SCI 论文</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-label">实验受试者</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">40<span style="font-size:0.5em;font-weight:500;"> 秒</span></div>
+        <div class="hero-stat-label">AI 文献调研</div>
+      </div>
+    </div>
+    <div class="hero-contact">
+      <a href="tel:+8618179185924">181 7918 5924</a>
+      <span style="color:#5C5047;">&middot;</span>
+      <a href="mailto:2391374900@qq.com">2391374900@qq.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ DIRECTORY ═══════════════ -->
+<section class="directory">
+  <div class="section-inner">
+    <div class="directory-grid">
+      <a href="#published" class="dir-card">
+        <div class="dir-num">01</div>
+        <div class="dir-label">已见刊 &middot; SCI</div>
+        <div class="dir-title">基于用户需求的宿舍家具设计</div>
+        <div class="dir-subtitle">Kano 模型驱动 &middot; UCD 完整流程 &middot; BioResources</div>
+      </a>
+      <a href="#submitted" class="dir-card">
+        <div class="dir-num">02</div>
+        <div class="dir-label">在投 &middot; IJHCI</div>
+        <div class="dir-title">数据驱动的办公椅优化框架</div>
+        <div class="dir-subtitle">100 受试者 &middot; RF + NSGA-II &middot; JACK 验证</div>
+      </a>
+      <a href="#agent" class="dir-card">
+        <div class="dir-num">03</div>
+        <div class="dir-label">AI 系统</div>
+        <div class="dir-title">Multi-Agent 学术文献助手</div>
+        <div class="dir-subtitle">40 秒完成文献调研 &middot; 三 Agent 流水线</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PAPER 1: BioRes ═══════════════ -->
+<section class="section bg-cream" id="published">
+  <div class="section-inner">
+    <div class="project-header">
+      <div class="section-label">已见刊 &middot; SCI 收录</div>
+      <h2 class="section-headline">基于用户需求的<br>宿舍家具设计</h2>
+      <p class="section-subhead">
+        从需求调研到设计评估的完整研究闭环。发表于 BioResources。
+      </p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-visual auto-height" style="background:var(--surface);padding:12px;">
+        <img src="BioRes/ANP.png" alt="ANP 网络分析结构图" style="width:100%;height:100%;object-fit:contain;border-radius:12px;">
+      </div>
+      <div class="feature-text">
+        <h3>模块化：<br>ANP 网络的中心枢纽。</h3>
+        <p>本研究采用<strong>ANP（网络分析法）</strong>建立三层评价结构：目标层（宿舍木质家具设计）&rarr; 6 个准则 &rarr; 18 个子指标 &rarr; 3 个候选方案。与传统 AHP 不同，ANP 揭示了准则层之间的<strong>交叉依赖关系</strong>。</p>
+        <p>其中<strong>模块化（C6）是整个网络的枢纽节点</strong>&mdash;&mdash;它向下衍生出自由组合、功能模块化、可扩展性三个子指标，横向与安全性（结构稳定性）、舒适性（人机合理性）、储物空间（空间效率）、私密性（隔断设置）四个准则存在双向反馈。这意味着<strong>模块化设计的决策会传导至整个指标体系</strong>，是设计方案排序的关键杠杆点。</p>
+        <div class="tag-row">
+          <span class="tag">ANP 网络分析</span>
+          <span class="tag">模块化设计</span>
+          <span class="tag">定性+定量</span>
+          <span class="tag">Kano 需求分类</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row" style="margin-bottom:48px;">
+      <div class="feature-text">
+        <h3>多维度雷达：<br>看见设计的真实面貌。</h3>
+        <p>基于 ANP 确定的指标权重与设计方案评分，雷达图直观对比三个设计候选方案在六个核心指标上的表现差异。方案 C 在舒适与美观维度突出但储物效率偏弱，方案 A 均衡但无突出优势——这种"可视化取舍"为最终设计决策提供了直观依据。</p>
+        <ul class="feature-list">
+          <li>方案 A：均衡型，各指标均在中上水平</li>
+          <li>方案 B：功能型，储物与结构表现最优</li>
+          <li>方案 C：体验型，舒适与美观维度领先</li>
+        </ul>
+      </div>
+      <div class="feature-visual" style="background:var(--surface);display:flex;align-items:center;justify-content:center;padding:16px;">
+        <canvas id="radarChart" style="max-width:100%;max-height:100%;"></canvas>
+      </div>
+    </div>
+
+    <div class="insight-callout">
+      <div class="insight-label">核心发现</div>
+      <p>ANP 超级矩阵揭示：<strong>模块化（C6）</strong>以其最高的中间中心度成为网络的结构性枢纽&mdash;&mdash;它并非权重最高的准则（安全 C1 权重最高），但<strong>所有准则层的依赖箭头全部经过或发端于 C6</strong>。这意味着模块化是设计决策中最重要的<strong>杠杆点</strong>：一个模块化决策会沿网络路径传导至安全、储物、舒适、私密、美观五个维度。</p>
+    </div>
+
+    <!-- Chain Relationships -->
+    <h3 style="font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;color:var(--text);">关键链式关系</h3>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:32px;letter-spacing:-0.01em;">ANP 准则层之间存在六条主要依赖路径，共同构成设计决策的传导网络。</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:56px;">
+      <!-- Chain 1 -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 20px;">
+        <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:8px;">链 1 &middot; 枢纽-安全链</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.5;">C6 &rarr; C11 &rarr; C1 &rarr; 方案</div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;letter-spacing:-0.01em;">模块化通过结构稳定性传导至安全性。标准化接口的强度决定了任意组合方式下的整体结构可靠度，这是所有其他维度的物理前提。</p>
+      </div>
+      <!-- Chain 2 -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 20px;">
+        <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:8px;">链 2 &middot; 模块-储物链</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.5;">C6 &rarr; C31 &rarr; C3 &rarr; C2</div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;letter-spacing:-0.01em;">模块化通过空间效率传导至储物空间，再进一步影响使用舒适性。灵活的模块组合方式是有限宿舍空间下提升功能密度的关键路径。</p>
+      </div>
+      <!-- Chain 3 -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 20px;">
+        <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:8px;">链 3 &middot; 模块-私密链</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.5;">C6 &rarr; C51 &rarr; C5 &rarr; C2</div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;letter-spacing:-0.01em;">模块化通过隔断设置传导至私密性，再作用于心理层面的舒适感知。可移动隔断模块提供了在不改动建筑结构下实现个人空间的可能。</p>
+      </div>
+      <!-- Chain 4 -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 20px;">
+        <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:8px;">链 4 &middot; 安全-储物互馈</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.5;">C1 &harr; C3 双向制约</div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;letter-spacing:-0.01em;">安全性（结构稳定性 C11）与储物空间（空间效率 C31）之间存在双向反馈&mdash;&mdash;增加储物密度可能削弱结构完整性，反之保守的结构设计会压缩可用储物容积。</p>
+      </div>
+      <!-- Chain 5 -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 20px;">
+        <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:8px;">链 5 &middot; 舒适-美观协同</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.5;">C2 &harr; C4 双向促进</div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;letter-spacing:-0.01em;">人机工程学合理性（C21）与外观配色（C41）、风格统一（C42）之间存在双向协同&mdash;&mdash;符合人体尺度的设计天然具有秩序美感，而视觉上的和谐会提升使用时的感知舒适。</p>
+      </div>
+      <!-- Chain 6 -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px 20px;">
+        <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:8px;">链 6 &middot; 模块-美观链</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:10px;line-height:1.5;">C6 &rarr; C61 &rarr; C4 &rarr; 方案</div>
+        <p style="font-size:12px;color:var(--text-muted);line-height:1.6;letter-spacing:-0.01em;">模块化通过自由组合（C61）和可扩展性（C63）传导至美观性。用户自主排列组合模块单元，在标准化体系中实现个性化视觉表达。</p>
+      </div>
+    </div>
+
+    <!-- Design Strategies -->
+    <h3 style="font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;color:var(--text);">设计策略</h3>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:32px;letter-spacing:-0.01em;">基于六条链式关系的分析，提出四条系统性的设计策略。</p>
+
+    <div class="skills-grid" style="margin-bottom:48px;">
+      <div class="skill-card" style="border-left:3px solid var(--accent);">
+        <h4>策略一：模块化先导，自上而下分解</h4>
+        <p>基于链 1/2/3/6 的共同起点&mdash;&mdash;<strong>模块化是所有依赖路径的起点</strong>。将家具系统首先分解为标准化的床体、储物、书桌、隔断四个功能模块族，定义统一的物理接口（连接件规格、载荷传递路径、尺寸模数），再在各模块族内部进行深化设计。此策略确保后续所有维度的优化都建立在可重组的模块基座上。</p>
+      </div>
+      <div class="skill-card" style="border-left:3px solid var(--accent-light);">
+        <h4>策略二：安全-储物协同，解决双向约束</h4>
+        <p>针对链 4 的 C1&harr;C3 双向制约，采用<strong>参数化协同设计</strong>：储物模块的壁厚、跨距、连接点数作为结构变量输入，安全模块的载荷标准、材料许用应力作为约束条件，在两者交集中搜索满足结构安全前提下的最大储物容积配置。避免先设计储物再校核安全的串行返工。</p>
+      </div>
+      <div class="skill-card" style="border-left:3px solid var(--accent-light);">
+        <h4>策略三：模块驱动空间体验，纵向贯通舒适与私密</h4>
+        <p>基于链 2（C6&rarr;C3&rarr;C2）和链 3（C6&rarr;C5&rarr;C2）的汇聚效应&mdash;&mdash;<strong>两条路径的终端都是舒适性</strong>。将模块化储物与模块化隔断作为提升用户体验的两个并行杠杆：储物模块提升功能效率型舒适，隔断模块提升心理型舒适。两者共享模块化接口标准，可混合配置。</p>
+      </div>
+      <div class="skill-card" style="border-left:3px solid #D5CDC5;">
+        <h4>策略四：模块化赋能迭代，降低全生命周期成本</h4>
+        <p>基于链 6（C6&rarr;C61&rarr;C4）和链 5（C2&harr;C4）的协同效应&mdash;&mdash;<strong>美观与舒适无需以整体更换为代价</strong>。可替换面板模块（配色/材质）、可增减的功能插件（附加抽屉/书架）使得用户入住后仍可持续调整家具配置。标准化模块接口确保新旧模块兼容，支撑从"一次性交付"到"持续进化"的设计范式转换。</p>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num primary">6</div>
+        <div class="stat-label">链式依赖关系<br>ANP 准则层网络</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">设计策略<br>链式关系驱动</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">C6</div>
+        <div class="stat-label">网络枢纽<br>所有链起点</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num primary">SCI</div>
+        <div class="stat-label">BioResources</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PAPER 2: IJHCI ═══════════════ -->
+<section class="section bg-dark" id="submitted">
+  <div class="section-inner">
+    <div class="project-header">
+      <div class="section-label">在投 &middot; IJHCI 审稿中</div>
+      <h2 class="section-headline">数据驱动的<br>办公椅优化框架</h2>
+      <p class="section-subhead">
+        100 名受试者 &middot; 190 有效样本 &middot; RF 代理模型 &middot; NSGA-II 优化 &middot; JACK 仿真验证
+      </p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <h3>舒适 &ne; 安全。<br>这是一个问题。</h3>
+        <p>我们发现了一个关键现象：<strong style="color:var(--accent-light);">生物力学上最优的座椅配置，往往不是用户主观感知最舒适的。</strong>这种"舒适-风险错配"意味着只追求客观指标的设计，可能忽视用户的真实体验。</p>
+        <ul class="feature-list">
+          <li>用户对靠背角度等结构参数变化不敏感，存在潜在健康隐患</li>
+          <li>主观舒适与客观风险在文献中长期被当作独立终点处理</li>
+          <li>缺乏将两者统一量化与优化的决策框架</li>
+        </ul>
+      </div>
+      <div class="feature-visual" style="background:var(--dark-surface);display:flex;align-items:center;justify-content:center;padding:20px;">
+        <canvas id="riskComfortChart" style="max-width:100%;max-height:100%;"></canvas>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num">100</div>
+        <div class="stat-label">受试者</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">190</div>
+        <div class="stat-label">有效样本</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0.696</div>
+        <div class="stat-label">Risk AUC</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">-6.6%</div>
+        <div class="stat-label">L4/L5 压缩力</div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-bottom:20px;">
+      <div class="section-label">五阶段闭环研究框架</div>
+    </div>
+
+    <div class="method-steps">
+      <div class="method-step">
+        <div class="method-step-index">1</div>
+        <div class="method-step-num">Phase 1</div>
+        <div class="method-step-name">数据采集</div>
+        <div class="method-step-desc">100人 x 2条件<br>侧视照片标注<br>RULA + 舒适评分</div>
+      </div>
+      <div class="method-step">
+        <div class="method-step-index">2</div>
+        <div class="method-step-num">Phase 2</div>
+        <div class="method-step-name">代理建模</div>
+        <div class="method-step-desc">两阶段 RF<br>6+6 特征输入<br>姿态预测 + 风险/舒适</div>
+      </div>
+      <div class="method-step">
+        <div class="method-step-index">3</div>
+        <div class="method-step-num">Phase 3</div>
+        <div class="method-step-name">交叉验证</div>
+        <div class="method-step-desc">Nested CV<br>Subject-grouped<br>95% CI + 校准</div>
+      </div>
+      <div class="method-step">
+        <div class="method-step-index">4</div>
+        <div class="method-step-num">Phase 4</div>
+        <div class="method-step-name">多目标优化</div>
+        <div class="method-step-desc">NSGA-II<br>150种群 x 80代<br>Health-First</div>
+      </div>
+      <div class="method-step">
+        <div class="method-step-index">5</div>
+        <div class="method-step-num">Phase 5</div>
+        <div class="method-step-name">仿真验证</div>
+        <div class="method-step-desc">JACK 数字人<br>L4/L5 压缩/剪切<br>独立验证</div>
+      </div>
+    </div>
+
+    <div class="insight-callout">
+      <div class="insight-label">关键发现</div>
+      <p>设计参数存在功能性分工&mdash;&mdash;<strong>全局结构参数</strong>（座高、靠背角度）主导客观风险，<strong>局部支撑参数</strong>（头枕、扶手）主导主观舒适。由此提出可迁移的设计策略：先定全局结构保安全，再调局部支撑优体验。</p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-visual" style="background:var(--dark-surface);display:flex;align-items:center;justify-content:center;padding:20px;">
+        <canvas id="importanceChart" style="max-width:100%;max-height:100%;"></canvas>
+      </div>
+      <div class="feature-text">
+        <h3>数据驱动的<br>设计洞察。</h3>
+        <p>随机森林特征重要性分析揭示了清晰的参数角色分工。右侧图表展示了各设计参数对风险预测和舒适预测的相对贡献&mdash;&mdash;<strong>同一组参数，在不同目标上表现出截然不同的重要性排序</strong>，这是"舒适-风险错配"的量化证据，也是差异化设计策略的数据基础。</p>
+        <ul class="feature-list">
+          <li>座高和靠背角度是 RULA 风险的主导因子</li>
+          <li>头枕高度和扶手高度与舒适度密切相关</li>
+          <li>数据直接支撑"先全局、后局部"的设计决策逻辑</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row" style="margin-bottom:0;">
+      <div class="feature-text">
+        <h3>独立仿真<br>验证优化效果。</h3>
+        <p>将 NSGA-II 优化得到的座椅参数配置输入 JACK 数字人仿真平台，与数据集中实际样本均值进行对比。三个关键生物力学指标均呈现一致性改善，独立验证了代理模型优化结果的可信度。</p>
+        <ul class="feature-list">
+          <li>L4/L5 椎间盘压缩力降低 6.6%</li>
+          <li>前后剪切力大幅降低 39.6%</li>
+          <li>躯干屈曲力矩降低 13.1%</li>
+        </ul>
+      </div>
+      <div class="feature-visual" style="background:var(--dark-surface);display:flex;align-items:center;justify-content:center;padding:20px;">
+        <canvas id="jackChart" style="max-width:100%;max-height:100%;"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROJECT 3: AGENT ═══════════════ -->
+<section class="section bg-cream" id="agent">
+  <div class="section-inner">
+    <div class="project-header">
+      <div class="section-label">AI 系统开发</div>
+      <h2 class="section-headline">Multi-Agent<br>学术文献助手</h2>
+      <p class="section-subhead">
+        从自身研究痛点出发，将 40 分钟手工检索<br>重构为 40 秒自动化研究系统。
+      </p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-text">
+        <h3>痛点即机会。</h3>
+        <p>作为研究者，我每天花 40-60 分钟在多个学术数据库间切换、翻译关键词、逐篇筛选论文、手动提炼要点&mdash;&mdash;这个过程重复且低效。</p>
+        <p>所以我为自己造了一个工具。三个 AI Agent 各司其职，通过结构化数据协作，把整个流程自动化。</p>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">DeepSeek-V3</span>
+          <span class="tag">ChromaDB</span>
+          <span class="tag">SearXNG</span>
+          <span class="tag">BGE-M3</span>
+        </div>
+      </div>
+      <div class="feature-visual">
+        <div class="feature-visual-content">
+          <div style="font-size:13px;color:var(--accent);letter-spacing:0.04em;margin-bottom:16px;">效率提升</div>
+          <div style="display:flex;align-items:center;gap:20px;justify-content:center;">
+            <div style="text-align:center;">
+              <div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">优化前</div>
+              <div style="font-size:42px;font-weight:700;color:var(--text);letter-spacing:-0.02em;">40<span style="font-size:16px;"> 分钟</span></div>
+            </div>
+            <div style="font-size:28px;color:var(--border);font-weight:300;">&rarr;</div>
+            <div style="text-align:center;">
+              <div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">优化后</div>
+              <div style="font-size:42px;font-weight:700;color:var(--accent);letter-spacing:-0.02em;">40<span style="font-size:16px;"> 秒</span></div>
+            </div>
+          </div>
+          <div style="margin-top:12px;font-size:13px;color:var(--text-muted);">效率提升 60&times;</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-bottom:20px;margin-top:72px;">
+      <div class="section-label">系统架构：三 Agent 流水线</div>
+    </div>
+
+    <div class="pipeline-visual">
+      <div class="pipeline-card">
+        <div class="p-index">Agent 01</div>
+        <div class="p-role">搜索</div>
+        <div class="p-desc">中文问题自动英译<br>5 学术引擎并行搜索<br>830+ 本地 PDF 向量库</div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-card">
+        <div class="p-index">Agent 02</div>
+        <div class="p-role">筛选</div>
+        <div class="p-desc">去重 + 相关性评分<br>保留 &ge;0.6 高相关论文<br>结构化 JSON 传递</div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-card">
+        <div class="p-index">Agent 03</div>
+        <div class="p-role">提炼</div>
+        <div class="p-desc">标题摘要翻译<br>提取 3&ndash;5 条核心要点<br>术语首次标注英文</div>
+      </div>
+    </div>
+
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+        <div class="terminal-dot"></div>
+        <div class="terminal-title">Terminal &mdash; python research.py</div>
+      </div>
+      <div class="terminal-body"><span class="t-dim">$</span> python research.py <span class="t-white">"动态办公椅对腰椎姿势与竖脊肌肌肉激活的影响"</span>
+
+<span class="t-cyan">[搜索Agent]</span> 正在搜索: 动态办公椅对腰椎姿势与竖脊肌肌肉激活的影响
+   本地 8 篇 + 外部 15 篇 = <span class="t-white">23 篇</span>
+<span class="t-amber">[筛选Agent]</span> 正在筛选 23 篇论文...
+   保留 <span class="t-white">8 篇</span> (相关度 >= 0.6)
+<span class="t-green">[提炼Agent]</span> 正在翻译 8 篇论文...
+   <span class="t-white">完成</span>
+
+==========================================
+研究问题: 动态办公椅对腰椎姿势与竖脊肌肌肉激活的影响
+搜索 23 篇 -> 筛选保留 8 篇 -> 翻译提炼完成
+==========================================
+
+<span class="t-white">[1] 站立与三种椅子坐姿下竖脊肌积分肌电活动与腰椎曲度的比较</span>
+    研究监测竖脊肌积分肌电活动和腰椎曲度，比较
+    Balans多动椅、办公椅、直背椅三种椅子...
+    核心要点:
+      1. 采用肌电与脊柱曲度同步测量评估座椅生物力学表现
+      2. 动态椅显著改变竖脊肌激活模式与腰椎曲度
+      3. 为腰背疼痛患者提供座椅选择依据</div>
+    </div>
+
+    <div class="insight-callout">
+      <div class="insight-label">设计哲学</div>
+      <p>每个 Agent <strong>只做一件事</strong>。Agent 之间传 JSON 而非自然语言&mdash;&mdash;避免理解偏差和错误累积。单 Agent 要求"翻译+筛选+提炼"时输出不稳定，拆分后两次运行判断一致。这是从用户（我自己）真实痛点出发，迭代出来的架构决策。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SKILLS ═══════════════ -->
+<section class="section bg-warm-gray">
+  <div class="section-inner">
+    <div class="project-header">
+      <div class="section-label">能力矩阵</div>
+      <h2 class="section-headline">研究方法<br>与技能栈</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>用户研究</h4>
+        <p>需求调研、问卷设计、Kano 分析、主观评分量表、人因实验设计、RULA 姿态评估、用户访谈</p>
+      </div>
+      <div class="skill-card">
+        <h4>实验与数据</h4>
+        <p>受控人因实验（100+ 被试）、MATLAB 数据处理、Random Forest、交叉验证、NSGA-II 优化、JACK 数字人仿真</p>
+      </div>
+      <div class="skill-card">
+        <h4>AI 与工具开发</h4>
+        <p>LLM Agent 架构、Prompt Engineering、RAG 系统、向量数据库、Python、Claude Code 辅助开发</p>
+      </div>
+      <div class="skill-card">
+        <h4>学术写作</h4>
+        <p>SCI 论文撰写与投稿、文献系统综述、研究框架设计、学术图表与可视化、中英双语写作</p>
+      </div>
+      <div class="skill-card">
+        <h4>设计方法</h4>
+        <p>以用户为中心的设计、约束决策建模、Comfort-Satisficing 策略、设计参数-人因映射分析</p>
+      </div>
+      <div class="skill-card">
+        <h4>工具链</h4>
+        <p>MATLAB、Python、JACK Siemens、Claude Code、Dify、Git、ChromaDB、SearXNG、SiliconFlow API</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="section-inner">
+    <p class="name">邓超然</p>
+    <p>南昌大学 建筑与设计学院 &middot; 工业设计 / 人机工效学</p>
+    <p>目标岗位：用户研究实习</p>
+    <p style="margin-top:8px;">
+      <a href="tel:+8618179185924" style="color:#8A857E;text-decoration:none;">181 7918 5924</a>
+      &nbsp;&middot;&nbsp;
+      <a href="mailto:2391374900@qq.com" style="color:#8A857E;text-decoration:none;">2391374900@qq.com</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ═══════════════ SCROLL ANIMATIONS ═══════════════ -->
+<script>
+(function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+  const targets = '.feature-row, .stats-row, .method-steps, ' +
+    '.pipeline-visual, .terminal-window, .insight-callout, ' +
+    '.project-header, .skills-grid .skill-card';
+  document.querySelectorAll(targets).forEach(el => {
+    el.classList.add('fade-up');
+    observer.observe(el);
+  });
+})();
+</script>
+
+<!-- ═══════════════ Chart.js ═══════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  Chart.defaults.font.family = "'Inter','Noto Sans SC',sans-serif";
+  Chart.defaults.font.size = 12;
+  Chart.defaults.color = '#7D7974';
+
+  const accent = '#8B7E74';
+  const accentLight = '#C4B8AC';
+  const gridColor = '#E5E2DD';
+  const warmGray = '#F3F1EC';
+
+  // ── Multi-Dimensional Radar Chart (Paper 1) ──
+  var radarCtx = document.getElementById('radarChart');
+  if (radarCtx) {
+    new Chart(radarCtx, {
+      type: 'radar',
+      data: {
+        labels: ['安全耐久', '功能实用', '储物效率', '人因舒适', '视觉美观', '结构强度'],
+        datasets: [
+          { label: '方案 A', data: [7.2, 7.0, 7.5, 6.8, 6.5, 7.8], borderColor: accent, backgroundColor: 'rgba(139,126,116,0.08)', borderWidth: 2, pointRadius: 3 },
+          { label: '方案 B', data: [8.0, 8.2, 8.5, 6.0, 5.8, 8.5], borderColor: accentLight, backgroundColor: 'rgba(196,184,172,0.08)', borderWidth: 2, pointRadius: 3 },
+          { label: '方案 C', data: [6.5, 7.0, 5.5, 8.5, 8.8, 6.8], borderColor: '#A89A8E', backgroundColor: 'rgba(168,154,142,0.08)', borderWidth: 2, pointRadius: 3 },
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: { display: true, text: '设计方案多维评估对比', font: { size: 14, weight: '600' }, color: '#1F1D1A', padding: 12 },
+          legend: { labels: { usePointStyle: true, font: { size: 11 } } }
+        },
+        scales: {
+          r: {
+            min: 4, max: 10,
+            grid: { color: gridColor },
+            angleLines: { color: gridColor },
+            pointLabels: { font: { size: 11 }, color: '#7D7974' },
+            ticks: { display: false }
+          }
+        }
+      }
+    });
+  }
+
+  // ── Risk vs Comfort Mismatch Chart (Paper 2) ──
+  var rcCtx = document.getElementById('riskComfortChart');
+  if (rcCtx) {
+    new Chart(rcCtx, {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: '受试者分布 (n=190)',
+          data: Array.from({length: 40}, function() {
+            return { x: 2 + Math.random() * 4.5, y: 3 + Math.random() * 6 };
+          }),
+          backgroundColor: 'rgba(196,184,172,0.5)',
+          borderColor: 'rgba(196,184,172,0)',
+          pointRadius: 5,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: { display: true, text: '舒适-风险错配分布', font: { size: 14, weight: '600' }, color: '#EBE8E3', padding: 16 },
+          subtitle: { display: true, text: '高舒适 ≠ 低风险', font: { size: 11 }, color: '#A8A49E', padding: 0 },
+          legend: { labels: { color: '#A8A49E' } }
+        },
+        scales: {
+          x: { title: { display: true, text: 'RULA 得分', color: '#A8A49E' }, min: 1, max: 7, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E' } },
+          y: { title: { display: true, text: '主观舒适度评分', color: '#A8A49E' }, min: 1, max: 9, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E' } }
+        }
+      }
+    });
+  }
+
+  // ── Feature Importance Chart (Paper 2) ──
+  var impCtx = document.getElementById('importanceChart');
+  if (impCtx) {
+    new Chart(impCtx, {
+      type: 'bar',
+      data: {
+        labels: ['座高', '靠背角度', '座深', '头枕高度', '扶手高度', '腰枕高度'],
+        datasets: [
+          { label: '风险预测贡献', data: [0.28, 0.24, 0.15, 0.08, 0.06, 0.05], backgroundColor: accentLight, borderRadius: 4 },
+          { label: '舒适预测贡献', data: [0.06, 0.09, 0.11, 0.25, 0.20, 0.13], backgroundColor: '#A89A8E', borderRadius: 4 },
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: { display: true, text: '设计参数重要性分析', font: { size: 14, weight: '600' }, color: '#EBE8E3', padding: 16 },
+          legend: { labels: { color: '#A8A49E', usePointStyle: true } }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E', font: { size: 10 } } },
+          y: { title: { display: true, text: '特征重要性', color: '#A8A49E' }, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E' } }
+        }
+      }
+    });
+  }
+
+  // ── JACK Simulation Before/After Chart (Paper 2) ──
+  var jackCtx = document.getElementById('jackChart');
+  if (jackCtx) {
+    new Chart(jackCtx, {
+      type: 'bar',
+      data: {
+        labels: ['L4/L5 压缩力', 'L4/L5 剪切力', '躯干屈曲力矩'],
+        datasets: [
+          { label: '数据集均值', data: [1.0, 1.0, 1.0], backgroundColor: 'rgba(196,184,172,0.35)', borderRadius: 4 },
+          { label: 'NSGA-II 优化解', data: [0.934, 0.604, 0.869], backgroundColor: accentLight, borderRadius: 4 },
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: { display: true, text: 'JACK 仿真验证对比', font: { size: 14, weight: '600' }, color: '#EBE8E3', padding: 16 },
+          subtitle: { display: true, text: '以数据集均值为基准线 1.0', font: { size: 11 }, color: '#A8A49E', padding: 0 },
+          legend: { labels: { color: '#A8A49E', usePointStyle: true } }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E', font: { size: 10 } } },
+          y: { title: { display: true, text: '相对值', color: '#A8A49E' }, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E' } }
+        }
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+/*  Design Tokens -- 邓超然 作品集
+    Palette: Warm Gray "高级灰"
+    Inspired by stone, architecture, and refined minimalism.  */
+
+/* ═══ Layer 1: Primitive Tokens ═══ */
+:root {
+  /* Warm grays */
+  --color-cream:       #FAF8F5;
+  --color-warm-gray:   #F3F1EC;
+  --color-surface:     #FFFFFF;
+  --color-dark:        #1C1B1A;
+  --color-dark-surface:#252423;
+
+  /* Text */
+  --color-text:        #1F1D1A;
+  --color-text-muted:  #7D7974;
+  --color-text-subtle: #A8A49E;
+
+  /* Borders */
+  --color-border:      #E5E2DD;
+  --color-border-light: rgba(0,0,0,0.05);
+
+  /* Accent (stone/warm taupe) */
+  --color-accent:      #8B7E74;
+  --color-accent-light:#C4B8AC;
+  --color-accent-dark: #5C5047;
+
+  /* Spacing */
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+
+  /* Typography */
+  --font-heading: 'Inter', 'Noto Sans SC', sans-serif;
+  --font-body:    'Inter', 'Noto Sans SC', sans-serif;
+  --font-mono:    'SF Mono', 'JetBrains Mono', 'Consolas', monospace;
+
+  --font-size-sm:  0.8125rem;
+  --font-size-base: 1rem;
+  --font-size-lg:  1.125rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.5rem;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.05);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.07);
+
+  /* Duration */
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+}

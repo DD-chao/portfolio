@@ -1,0 +1,20 @@
+# Archives
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# Agent secrets
+.siliconflow_key
+.conversation_id
+
+# Node
+node_modules/
+
+# Temporary
+ui-ux-pro-max-skill/
