@@ -1,0 +1,21 @@
+# 草稿临时文件
+*.tmp
+*.bak
+*~
+
+# Word 临时文件
+~$*.docx
+~$*.doc
+
+# LaTeX 编译产物
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+
+# Python
+__pycache__/
+*.pyc

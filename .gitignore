@@ -18,3 +18,27 @@ node_modules/
 
 # Temporary
 ui-ux-pro-max-skill/
+
+# Original large images (WebP versions are used instead)
+BioRes/*.png
+JACK仿真.png
+JACK仿真-sharp.png
+实验图片.png
+照片.jpg
+生成最美证件照*.png
+
+# Generated PDF resume
+简历-用户研究实习.pdf
+
+# Claude
+.claude/
+
+# Subject data photos (190+ files, too large for repo)
+my-paper/data/*.jpg
+my-paper/data/*.png
+
+# Extracted third-party skills
+my-paper/nature-skills-extracted/
+
+# ChromaDB index (142MB, regenerated locally)
+agent-learning/academic/chroma_db/

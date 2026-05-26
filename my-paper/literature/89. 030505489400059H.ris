@@ -1,0 +1,17 @@
+TY  - JOUR
+T1  - Determining objective weights in multiple criteria problems: The critic method
+AU  - Diakoulaki, D.
+AU  - Mavrotas, G.
+AU  - Papayannakis, L.
+JO  - Computers & Operations Research
+VL  - 22
+IS  - 7
+SP  - 763
+EP  - 770
+PY  - 1995
+DA  - 1995/08/01/
+SN  - 0305-0548
+DO  - https://doi.org/10.1016/0305-0548(94)00059-H
+UR  - https://www.sciencedirect.com/science/article/pii/030505489400059H
+AB  - The association of weights in multiple criteria problems is a critical stage of the whole decision making process. In some decision situations the extraction of subjective preferences is either difficult or undesirable. This paper proposes a method for the determination of objective weights which is based on the quantification of two fundamental notions of MCDM: the contrast intensity and the conflicting character of the evaluation criteria. The latter notion is of great importance in interfirm comparisons because the financial indices used are often highly correlated. The method developed is applied to a sample of industrial firms. The results are compared to those obtained by other sets of objective weights and show this method ensures a better compromise of the criteria examined.
+ER  - 

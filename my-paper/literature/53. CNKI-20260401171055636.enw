@@ -1,0 +1,18 @@
+%0 Journal Article
+%A 丁满
+%A 李鹏慧
+%A 汪艺涵
+%A 张新新
+%+ 河北工业大学建筑与艺术设计学院;
+%T 基于CNT-GAT和EGT-GA的产品色彩情感设计方法
+%J 计算机集成制造系统
+%K 情感意象;产品色彩情感设计(PCED);复杂网络理论(CNT);图注意力网络(GAT);演化博弈-遗传算法(EGT-GA)
+%X 用户的情感需求存在多维度、多层次性，这种情感层面的深度互动特性极大地提升了产品色彩情感设计(product color emotional design， PCED)过程的复杂度。对此，本文提出一种基于复杂网络-图注意力网络(Complex network theory - Graph attention network， CNT-GAT)和演化博弈-遗传算法(Evolutionary game theory - Genetic algorithm， EGT-GA)的产品色彩情感设计方法，首先采用大数据网络爬虫技术与自然语言处理技术对PCED进行深度解析，构建产品色彩情感数据集；然后将复杂网络理论与图注意力网络相结合，学习用户情感意象及产品色彩特征之间隐性的多元映射关系，并将其进行外显化；最后引用演化博弈理论改进遗传算法，对产品色彩方案进行优化设计，并建立PCED系统。最终以挖掘机的色彩设计为例，证明论文所提方法的有效性和适用性。
+%P 1-29
+%@ 1006-5911
+%L 11-5946/TP
+%U https://link.cnki.net/doi/10.13196/j.cims.2024.0618
+%R 10.13196/j.cims.2024.0618
+%W CNKI
+
+ 

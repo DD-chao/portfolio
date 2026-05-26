@@ -1,0 +1,89 @@
+general:
+  instance_name: "Academic Search"
+  debug: false
+  privacypolicy_url: false
+  contact_url: false
+  enable_metrics: false
+
+brand:
+  docs_url: https://docs.searxng.org/
+  public_instances: https://searx.space
+  wiki_url: https://github.com/searxng/searxng/wiki
+  issue_url: https://github.com/searxng/searxng/issues
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "all"
+  ban_time_on_fail: 5
+  max_ban_time_on_fail: 120
+  formats:
+    - html
+    - json
+
+server:
+  secret_key: "change-me-to-a-random-string-at-least-32-chars"
+  bind_address: "0.0.0.0"
+  port: 8080
+  limiter: false
+  image_proxy: false
+  method: "GET"
+  http_protocol_version: "1.0"
+
+ui:
+  static_use_hash: true
+  default_theme: simple
+  default_locale: "zh-Hans-CN"
+
+outgoing:
+  request_timeout: 10.0
+  useragent_suffix: ""
+  pool_connections: 100
+  pool_maxsize: 20
+
+doi_resolvers:
+  oadoi.org: 'https://oadoi.org/'
+  doi.org: 'https://doi.org/'
+
+default_doi_resolver: 'oadoi.org'
+
+engines:
+  - name: pubmed
+    engine: pubmed
+    shortcut: pub
+    timeout: 30.0
+
+  - name: arxiv
+    engine: arxiv
+    shortcut: arx
+    timeout: 15.0
+
+  - name: semantic scholar
+    engine: semantic_scholar
+    shortcut: se
+    timeout: 15.0
+
+  - name: openalex
+    engine: openalex
+    shortcut: oa
+    timeout: 20.0
+
+  - name: crossref
+    engine: crossref
+    shortcut: cr
+    timeout: 15.0
+
+  - name: bing
+    engine: bing
+    shortcut: bi
+    timeout: 10.0
+
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: ddg
+    timeout: 10.0
+
+  - name: wikipedia
+    engine: wikipedia
+    shortcut: wp
+    timeout: 10.0

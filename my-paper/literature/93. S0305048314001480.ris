@@ -1,0 +1,18 @@
+TY  - JOUR
+T1  - Best-worst multi-criteria decision-making method
+AU  - Rezaei, Jafar
+JO  - Omega
+VL  - 53
+SP  - 49
+EP  - 57
+PY  - 2015
+DA  - 2015/06/01/
+SN  - 0305-0483
+DO  - https://doi.org/10.1016/j.omega.2014.11.009
+UR  - https://www.sciencedirect.com/science/article/pii/S0305048314001480
+KW  - Multi-criteria decision-making (MCDM)
+KW  - Multi-attribute decision-making (MADM)
+KW  - Consistency ratio
+KW  - Pairwise comparison
+AB  - In this paper, a new method, called best-worst method (BWM) is proposed to solve multi-criteria decision-making (MCDM) problems. In an MCDM problem, a number of alternatives are evaluated with respect to a number of criteria in order to select the best alternative(s). According to BWM, the best (e.g. most desirable, most important) and the worst (e.g. least desirable, least important) criteria are identified first by the decision-maker. Pairwise comparisons are then conducted between each of these two criteria (best and worst) and the other criteria. A maximin problem is then formulated and solved to determine the weights of different criteria. The weights of the alternatives with respect to different criteria are obtained using the same process. The final scores of the alternatives are derived by aggregating the weights from different sets of criteria and alternatives, based on which the best alternative is selected. A consistency ratio is proposed for the BWM to check the reliability of the comparisons. To illustrate the proposed method and evaluate its performance, we used some numerical examples and a real-word decision-making problem (mobile phone selection). For the purpose of comparison, we chose AHP (analytic hierarchy process), which is also a pairwise comparison-based method. Statistical results show that BWM performs significantly better than AHP with respect to the consistency ratio, and the other evaluation criteria: minimum violation, total deviation, and conformity. The salient features of the proposed method, compared to the existing MCDM methods, are: (1) it requires less comparison data; (2) it leads to more consistent comparisons, which means that it produces more reliable results.
+ER  - 

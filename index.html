@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>邓超然 - 用户研究作品集</title>
+<title>邓超然 - 作品集</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     --dark:         #1C1B1A;
     --dark-surface: #252423;
     --text:         #1F1D1A;
-    --text-muted:   #7D7974;
+    --text-muted:   #6B6762;
     --text-subtle:  #A8A49E;
     --border:       #E5E2DD;
     --border-light: rgba(0,0,0,0.05);
@@ -90,8 +90,13 @@
     text-decoration: none;
     letter-spacing: -0.01em;
     transition: color 0.2s;
+    padding: 12px 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
   .nav-links a:hover { color: var(--accent-dark); }
+  .nav-links a.nav-active { color: var(--accent-dark); font-weight: 500; }
 
   /* ── Section ── */
   .section { padding: 120px 0; position: relative; }
@@ -777,13 +782,42 @@
     margin-bottom: 8px;
   }
 
-  /* ── Animations ── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+  /* ── Focus Visible ── */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Skip Link ── */
+  .skip-link {
+    position: fixed;
+    top: 8px; left: 8px;
+    z-index: 9999;
+    padding: 8px 18px;
+    background: var(--dark);
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transform: translateY(-120%);
+    transition: transform 0.2s;
+  }
+  .skip-link:focus-visible { transform: translateY(0); }
+
+  /* ── Animations ── */
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { opacity: 1; transform: none; transition: none; }
+  }
 
   /* ── Responsive ── */
   @media (max-width:834px) {
@@ -807,6 +841,7 @@
     .pipeline-visual { flex-direction:column; }
     .pipeline-arrow { transform:rotate(90deg); }
     .skills-grid { grid-template-columns:1fr 1fr; }
+    .design-grid { grid-template-columns:1fr 1fr !important; }
     .contrast-row { grid-template-columns:1fr; }
   }
 
@@ -817,12 +852,16 @@
     .stats-row { grid-template-columns:1fr 1fr; }
     .method-steps { grid-template-columns:repeat(2,1fr); }
     .skills-grid { grid-template-columns:1fr; }
+    .design-grid { grid-template-columns:1fr !important; }
     .nav-links { gap:16px; }
     .nav-links a { font-size:11px; }
   }
 </style>
 </head>
 <body>
+
+<!-- ═══════════════ SKIP LINK ═══════════════ -->
+<a href="#published" class="skip-link">跳到主要内容</a>
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav class="nav">
@@ -842,10 +881,10 @@
   <div class="section-inner">
     <div class="hero-photo-wrap">
       <div class="hero-photo-ring"></div>
-      <img class="hero-photo" src="照片.jpg" alt="邓超然" loading="eager">
+      <img class="hero-photo" src="hero-photo.webp" alt="邓超然" width="132" height="132" loading="eager">
     </div>
     <h1 class="hero-name">邓超然</h1>
-    <p class="hero-title">用户研究 &middot; 人机工效学 &middot; 数据驱动设计</p>
+    <p class="hero-title">工业设计 &middot; 人机工效学 &middot; 数据驱动设计</p>
     <p class="hero-affiliation">南昌大学 建筑与设计学院</p>
     <div class="hero-stats">
       <div>
@@ -908,7 +947,7 @@
 
     <div class="feature-row">
       <div class="feature-visual auto-height" style="background:var(--surface);padding:12px;">
-        <img src="BioRes/ANP.png" alt="ANP 网络分析结构图" style="width:100%;height:100%;object-fit:contain;border-radius:12px;">
+        <img src="BioRes/ANP.webp" alt="ANP 网络分析结构图" style="width:100%;height:100%;object-fit:contain;border-radius:12px;">
       </div>
       <div class="feature-text">
         <h3>模块化：<br>ANP 网络的中心枢纽。</h3>
@@ -990,7 +1029,7 @@
     <h3 style="font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;color:var(--text);">设计策略</h3>
     <p style="font-size:14px;color:var(--text-muted);margin-bottom:32px;letter-spacing:-0.01em;">基于六条链式关系的分析，提出四条系统性的设计策略。</p>
 
-    <div class="skills-grid" style="margin-bottom:48px;">
+    <div class="skills-grid" style="margin-bottom:32px;">
       <div class="skill-card" style="border-left:3px solid var(--accent);">
         <h4>策略一：模块化先导，自上而下分解</h4>
         <p>基于链 1/2/3/6 的共同起点&mdash;&mdash;<strong>模块化是所有依赖路径的起点</strong>。将家具系统首先分解为标准化的床体、储物、书桌、隔断四个功能模块族，定义统一的物理接口（连接件规格、载荷传递路径、尺寸模数），再在各模块族内部进行深化设计。此策略确保后续所有维度的优化都建立在可重组的模块基座上。</p>
@@ -1006,6 +1045,37 @@
       <div class="skill-card" style="border-left:3px solid #D5CDC5;">
         <h4>策略四：模块化赋能迭代，降低全生命周期成本</h4>
         <p>基于链 6（C6&rarr;C61&rarr;C4）和链 5（C2&harr;C4）的协同效应&mdash;&mdash;<strong>美观与舒适无需以整体更换为代价</strong>。可替换面板模块（配色/材质）、可增减的功能插件（附加抽屉/书架）使得用户入住后仍可持续调整家具配置。标准化模块接口确保新旧模块兼容，支撑从"一次性交付"到"持续进化"的设计范式转换。</p>
+      </div>
+    </div>
+
+    <!-- Design Output -->
+    <h3 style="font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;color:var(--text);">设计方案</h3>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:32px;letter-spacing:-0.01em;">基于以上策略，将研究洞察转化为三套模块化宿舍床设计方案。铝合金框架 + 卡扣式金属槽确保结构稳定性（权重第1），模块化标准件响应"模块化设计"枢纽指标（权重第3），E0 级环保复合木材满足环保性维度。</p>
+
+    <div class="design-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);">
+        <img src="BioRes/scheme-1.webp" alt="方案一：精细分区" style="width:100%;display:block;" loading="lazy">
+        <div style="padding:20px 22px;">
+          <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:6px;">方案一</div>
+          <div style="font-size:16px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:6px;">精细分区</div>
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;">衣柜+抽屉+开放架三区分立，每种物品有专属收纳位，适合物品分类明确的用户。</p>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);">
+        <img src="BioRes/scheme-2.webp" alt="方案二：灵活布局" style="width:100%;display:block;" loading="lazy">
+        <div style="padding:20px 22px;">
+          <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:6px;">方案二</div>
+          <div style="font-size:16px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:6px;">灵活布局</div>
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;">扩充悬挂区、取消固定床头柜，最大化自定义空间，适合衣物多、偏好自主规划的用户。</p>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);">
+        <img src="BioRes/scheme-3.webp" alt="方案三：隐私优先" style="width:100%;display:block;" loading="lazy">
+        <div style="padding:20px 22px;">
+          <div style="font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:6px;">方案三</div>
+          <div style="font-size:16px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:6px;">隐私优先</div>
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;">滑动门+封闭式收纳+内部多层抽屉，兼顾隐私保护与储物密度，适合对个人空间敏感的用户。</p>
+        </div>
       </div>
     </div>
 
@@ -1075,7 +1145,12 @@
       </div>
     </div>
 
-    <div style="text-align:center; margin-bottom:20px;">
+    <div style="text-align:center;margin-top:48px;">
+      <img src="实验图片.webp" alt="实验场景：志愿者坐姿采集与计算机视觉关键点标注" style="max-width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-md);" loading="lazy">
+      <p style="font-size:12px;color:var(--text-muted);margin-top:10px;letter-spacing:-0.01em;">实验场景：100 名被试侧位照片采集，计算机视觉自动标注 9 个关节关键点并计算姿态角度</p>
+    </div>
+
+    <div style="text-align:center; margin:56px 0 20px;">
       <div class="section-label">五阶段闭环研究框架</div>
     </div>
 
@@ -1122,28 +1197,30 @@
         <canvas id="importanceChart" style="max-width:100%;max-height:100%;"></canvas>
       </div>
       <div class="feature-text">
-        <h3>数据驱动的<br>设计洞察。</h3>
-        <p>随机森林特征重要性分析揭示了清晰的参数角色分工。右侧图表展示了各设计参数对风险预测和舒适预测的相对贡献&mdash;&mdash;<strong>同一组参数，在不同目标上表现出截然不同的重要性排序</strong>，这是"舒适-风险错配"的量化证据，也是差异化设计策略的数据基础。</p>
+        <h3>用户感知 ≠ 身体现实。</h3>
+        <p>随机森林模型揭示了一个关键洞察：<strong>用户最在意的参数，和真正影响身体风险的参数，几乎完全错位。</strong>头枕高度主导了舒适感知（贡献度 0.83），但对健康风险的影响却排在中游；相反，座高和靠背角度几乎决定了姿势风险，用户却对它们最不敏感。</p>
         <ul class="feature-list">
-          <li>座高和靠背角度是 RULA 风险的主导因子</li>
-          <li>头枕高度和扶手高度与舒适度密切相关</li>
-          <li>数据直接支撑"先全局、后局部"的设计决策逻辑</li>
+          <li>头枕高度 = 舒适之王（0.834），但风险贡献仅排第三</li>
+          <li>座高 + 靠背角度 = 风险主控（合计 0.764），用户几乎无感知</li>
+          <li>这解释了为什么用户"自己调到最舒服"的坐姿，往往并不安全</li>
         </ul>
       </div>
     </div>
 
     <div class="feature-row" style="margin-bottom:0;">
       <div class="feature-text">
-        <h3>独立仿真<br>验证优化效果。</h3>
-        <p>将 NSGA-II 优化得到的座椅参数配置输入 JACK 数字人仿真平台，与数据集中实际样本均值进行对比。三个关键生物力学指标均呈现一致性改善，独立验证了代理模型优化结果的可信度。</p>
+        <h3>真实数据验证：<br>不止是纸上谈兵。</h3>
+        <p style="font-size:20px;font-weight:500;line-height:1.6;color:#A8A49E;margin-bottom:20px;letter-spacing:-0.01em;">将 NSGA-II 优化得到的座椅参数导入 JACK 数字人仿真平台，与 190 个真实样本均值逐一对比。三个关键生物力学指标全部改善——说明模型学到的是真实规律，不是数据噪声。</p>
         <ul class="feature-list">
-          <li>L4/L5 椎间盘压缩力降低 6.6%</li>
-          <li>前后剪切力大幅降低 39.6%</li>
-          <li>躯干屈曲力矩降低 13.1%</li>
+          <li>L4/L5 椎间盘压缩力降低 6.6%，腰部负担明显减轻</li>
+          <li>前后剪切力大幅降低 39.6%，脊柱稳定性提升最显著</li>
+          <li>躯干屈曲力矩降低 13.1%，坐姿更自然</li>
         </ul>
       </div>
-      <div class="feature-visual" style="background:var(--dark-surface);display:flex;align-items:center;justify-content:center;padding:20px;">
-        <canvas id="jackChart" style="max-width:100%;max-height:100%;"></canvas>
+      <div class="feature-visual auto-height" style="background:var(--dark-surface);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px;min-height:360px;border-radius:var(--radius-lg);">
+        <div style="position:relative;min-height:0;"><canvas id="jackChart1" style="width:100% !important;height:100% !important;"></canvas></div>
+        <div style="position:relative;min-height:0;"><canvas id="jackChart2" style="width:100% !important;height:100% !important;"></canvas></div>
+        <div style="position:relative;min-height:0;"><canvas id="jackChart3" style="width:100% !important;height:100% !important;"></canvas></div>
       </div>
     </div>
   </div>
@@ -1167,7 +1244,7 @@
         <p>所以我为自己造了一个工具。三个 AI Agent 各司其职，通过结构化数据协作，把整个流程自动化。</p>
         <div class="tag-row">
           <span class="tag">Python</span>
-          <span class="tag">DeepSeek-V3</span>
+          <span class="tag">DeepSeek-V4-Pro</span>
           <span class="tag">ChromaDB</span>
           <span class="tag">SearXNG</span>
           <span class="tag">BGE-M3</span>
@@ -1216,7 +1293,63 @@
       </div>
     </div>
 
-    <div class="terminal-window">
+    <div class="stats-row" style="margin-bottom:48px;">
+      <div class="stat-item">
+        <div class="stat-num">1000+</div>
+        <div class="stat-label">已索引论文<br>人因工程 / 工业设计</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">学术搜索引擎<br>OpenAlex · PubMed · Arxiv 等</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">60<span style="font-size:0.5em;">×</span></div>
+        <div class="stat-label">效率提升<br>40 分钟 → 40 秒</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">630</div>
+        <div class="stat-label">本地 PDF<br>BGE-M3 向量化</div>
+      </div>
+    </div>
+
+    <!-- Architecture Diagram -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:28px 24px;margin-bottom:48px;overflow-x:auto;">
+      <div style="text-align:center;font-size:11px;font-weight:600;color:var(--accent);letter-spacing:0.05em;margin-bottom:20px;">系统架构</div>
+      <div style="display:flex;align-items:center;gap:8px;justify-content:center;min-width:700px;flex-wrap:wrap;">
+        <!-- Input -->
+        <div style="background:var(--warm-gray);border-radius:var(--radius-md);padding:14px 18px;text-align:center;min-width:90px;">
+          <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px;">用户</div>
+          <div style="font-size:10px;color:var(--text-muted);">中文提问</div>
+        </div>
+        <div style="font-size:16px;color:var(--border);font-weight:300;">→</div>
+        <!-- Agent 1 -->
+        <div style="background:var(--warm-gray);border-left:3px solid #8BB5B0;border-radius:var(--radius-md);padding:14px 18px;min-width:140px;">
+          <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;">Agent 01 · 搜索</div>
+          <div style="font-size:10px;color:var(--text-muted);line-height:1.5;">自动英译 + 5 引擎并行<br>SearXNG + ChromaDB<br>本地 630 篇 · 外部实时</div>
+        </div>
+        <div style="font-size:16px;color:var(--border);font-weight:300;">→</div>
+        <!-- Agent 2 -->
+        <div style="background:var(--warm-gray);border-left:3px solid #C4A87C;border-radius:var(--radius-md);padding:14px 18px;min-width:140px;">
+          <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;">Agent 02 · 筛选</div>
+          <div style="font-size:10px;color:var(--text-muted);line-height:1.5;">语义去重 + 相关性评分<br>保留 ≥ 0.6<br>结构化 JSON 传递</div>
+        </div>
+        <div style="font-size:16px;color:var(--border);font-weight:300;">→</div>
+        <!-- Agent 3 -->
+        <div style="background:var(--warm-gray);border-left:3px solid #8CA87C;border-radius:var(--radius-md);padding:14px 18px;min-width:140px;">
+          <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;">Agent 03 · 提炼</div>
+          <div style="font-size:10px;color:var(--text-muted);line-height:1.5;">LLM 标题摘要翻译<br>提取 3–5 条核心要点<br>术语首次标注英文</div>
+        </div>
+        <div style="font-size:16px;color:var(--border);font-weight:300;">→</div>
+        <!-- Output -->
+        <div style="background:var(--dark);border-radius:var(--radius-md);padding:14px 18px;text-align:center;min-width:90px;">
+          <div style="font-size:12px;font-weight:600;color:#E5E0DA;margin-bottom:2px;">结构化输出</div>
+          <div style="font-size:10px;color:#8A857E;">JSON · 终端 · Markdown</div>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:11px;color:var(--text-muted);margin-top:20px;letter-spacing:-0.01em;">Agent 间传 JSON 而非自然语言 —— 避免理解偏差和错误累积</p>
+    </div>
+
+    <div class="terminal-window" style="margin-bottom:88px;">
       <div class="terminal-header">
         <div class="terminal-dot"></div>
         <div class="terminal-dot"></div>
@@ -1228,25 +1361,43 @@
 <span class="t-cyan">[搜索Agent]</span> 正在搜索: 动态办公椅对腰椎姿势与竖脊肌肌肉激活的影响
    本地 8 篇 + 外部 15 篇 = <span class="t-white">23 篇</span>
 <span class="t-amber">[筛选Agent]</span> 正在筛选 23 篇论文...
-   保留 <span class="t-white">8 篇</span> (相关度 >= 0.6)
+   保留 <span class="t-white">8 篇</span>（相关度 ≥ 0.6）
 <span class="t-green">[提炼Agent]</span> 正在翻译 8 篇论文...
    <span class="t-white">完成</span>
 
-==========================================
+============================================================
 研究问题: 动态办公椅对腰椎姿势与竖脊肌肌肉激活的影响
-搜索 23 篇 -> 筛选保留 8 篇 -> 翻译提炼完成
-==========================================
+搜索 23 篇 → 筛选保留 8 篇 → 翻译提炼完成
+============================================================
 
-<span class="t-white">[1] 站立与三种椅子坐姿下竖脊肌积分肌电活动与腰椎曲度的比较</span>
-    研究监测竖脊肌积分肌电活动和腰椎曲度，比较
-    Balans多动椅、办公椅、直背椅三种椅子...
+<span class="t-white">[1] 三种坐姿与站立时竖脊肌积分肌电活动与腰椎曲度的比较</span>
+    比较Balans多动椅、办公椅、直背椅及站立姿势下竖脊肌
+    积分肌电活动和腰椎曲度变化...
     核心要点:
-      1. 采用肌电与脊柱曲度同步测量评估座椅生物力学表现
-      2. 动态椅显著改变竖脊肌激活模式与腰椎曲度
-      3. 为腰背疼痛患者提供座椅选择依据</div>
-    </div>
+      1. 三种椅子+站立姿势对比竖脊肌肌电活动和腰椎曲度
+      2. L2水平记录放松和直立姿势积分肌电数据
+      3. 为座椅设计和姿势调整提供科学依据
 
-    <div class="insight-callout">
+<span class="t-white">[2] 可调节坐骨和腰椎支撑对职业性腰痛的生物力学效应</span>
+    探讨可调节坐骨和腰椎支撑座椅对坐姿负荷与
+    背部肌肉活动的影响...
+    核心要点:
+      1. 评估可调节坐骨+腰椎支撑座椅对职业性腰痛的效应
+      2. 分析坐姿对腰椎前凸、肌肉活动和坐骨压力的影响
+      3. 为减少腰痛风险的座椅设计提供依据
+
+<span class="t-white">[3] 新型动态人体工学椅上的腰椎姿势与躯干肌肉活动</span>
+    比较新型动态人体工学椅(Back App)与标准办公椅
+    在打字任务中的表现...
+    核心要点:
+      1. 新型动态椅减少髋部屈曲，采用不稳定底座设计
+      2. 打字任务中对比腰椎姿势和躯干肌肉活动
+      3. 支持动态椅设计在减少腰痛方面的潜力
+         <span class="t-dim">... 等 8 篇论文</span>
+    </div>
+  </div>
+
+  <div class="insight-callout" style="margin-top:64px;">
       <div class="insight-label">设计哲学</div>
       <p>每个 Agent <strong>只做一件事</strong>。Agent 之间传 JSON 而非自然语言&mdash;&mdash;避免理解偏差和错误累积。单 Agent 要求"翻译+筛选+提炼"时输出不稳定，拆分后两次运行判断一致。这是从用户（我自己）真实痛点出发，迭代出来的架构决策。</p>
     </div>
@@ -1264,7 +1415,7 @@
     <div class="skills-grid">
       <div class="skill-card">
         <h4>用户研究</h4>
-        <p>需求调研、问卷设计、Kano 分析、主观评分量表、人因实验设计、RULA 姿态评估、用户访谈</p>
+        <p>需求调研、问卷设计、Kano 分析、ANP 网络分析、EW 熵权法、TOPSIS 评估、主观评分量表、人因实验设计、RULA 姿态评估、用户访谈</p>
       </div>
       <div class="skill-card">
         <h4>实验与数据</h4>
@@ -1295,7 +1446,7 @@
   <div class="section-inner">
     <p class="name">邓超然</p>
     <p>南昌大学 建筑与设计学院 &middot; 工业设计 / 人机工效学</p>
-    <p>目标岗位：用户研究实习</p>
+    <p>工业设计 / 人机工效学 / 用户洞察</p>
     <p style="margin-top:8px;">
       <a href="tel:+8618179185924" style="color:#8A857E;text-decoration:none;">181 7918 5924</a>
       &nbsp;&middot;&nbsp;
@@ -1322,6 +1473,21 @@
     el.classList.add('fade-up');
     observer.observe(el);
   });
+
+  /* ── Nav Active State ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(a => {
+          a.classList.toggle('nav-active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0, rootMargin: '-50% 0px -50% 0px' });
+  sections.forEach(s => navObserver.observe(s));
 })();
 </script>
 
@@ -1409,10 +1575,10 @@
     new Chart(impCtx, {
       type: 'bar',
       data: {
-        labels: ['座高', '靠背角度', '座深', '头枕高度', '扶手高度', '腰枕高度'],
+        labels: ['头枕高度', '座高', '靠背角度', '扶手高度', '腰靠高度', '座深'],
         datasets: [
-          { label: '风险预测贡献', data: [0.28, 0.24, 0.15, 0.08, 0.06, 0.05], backgroundColor: accentLight, borderRadius: 4 },
-          { label: '舒适预测贡献', data: [0.06, 0.09, 0.11, 0.25, 0.20, 0.13], backgroundColor: '#A89A8E', borderRadius: 4 },
+          { label: '舒适预测贡献', data: [0.834, 0.203, 0.008, 0.309, 0.179, 0.039], backgroundColor: '#A89A8E', borderRadius: 4 },
+          { label: '风险预测贡献', data: [0.325, 0.419, 0.345, 0.081, 0.095, 0.102], backgroundColor: accentLight, borderRadius: 4 },
         ]
       },
       options: {
@@ -1430,33 +1596,38 @@
     });
   }
 
-  // ── JACK Simulation Before/After Chart (Paper 2) ──
-  var jackCtx = document.getElementById('jackChart');
-  if (jackCtx) {
-    new Chart(jackCtx, {
+  // ── JACK Simulation Charts (Paper 2) ──
+  var jackCharts = [
+    { id: 'jackChart1', label: 'L4/L5 压缩力 (N)', before: 740.9, after: 691.8, pct: '↓6.6%' },
+    { id: 'jackChart2', label: 'L4/L5 剪切力 (N)', before: 27.3, after: 16.5, pct: '↓39.6%' },
+    { id: 'jackChart3', label: '躯干屈曲力矩 (Nm)', before: 41.1, after: 35.7, pct: '↓13.1%' },
+  ];
+  jackCharts.forEach(function(c) {
+    var ctx = document.getElementById(c.id);
+    if (!ctx) return;
+    new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['L4/L5 压缩力', 'L4/L5 剪切力', '躯干屈曲力矩'],
+        labels: ['优化前', '优化后'],
         datasets: [
-          { label: '数据集均值', data: [1.0, 1.0, 1.0], backgroundColor: 'rgba(196,184,172,0.35)', borderRadius: 4 },
-          { label: 'NSGA-II 优化解', data: [0.934, 0.604, 0.869], backgroundColor: accentLight, borderRadius: 4 },
+          { data: [c.before, c.after], backgroundColor: ['rgba(196,184,172,0.35)', '#C4B8AC'], borderRadius: 4, barPercentage: 0.55 },
         ]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          title: { display: true, text: 'JACK 仿真验证对比', font: { size: 14, weight: '600' }, color: '#EBE8E3', padding: 16 },
-          subtitle: { display: true, text: '以数据集均值为基准线 1.0', font: { size: 11 }, color: '#A8A49E', padding: 0 },
-          legend: { labels: { color: '#A8A49E', usePointStyle: true } }
+          title: { display: true, text: c.label, font: { size: 10, weight: '600' }, color: '#A8A49E', padding: 8 },
+          subtitle: { display: true, text: c.pct, font: { size: 11, weight: '700' }, color: '#8CA87C', padding: 0 },
+          legend: { display: false }
         },
         scales: {
-          x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E', font: { size: 10 } } },
-          y: { title: { display: true, text: '相对值', color: '#A8A49E' }, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E' } }
+          x: { grid: { display: false }, ticks: { color: '#8A857E', font: { size: 9 } } },
+          y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#8A857E', font: { size: 9 } } }
         }
       }
     });
-  }
+  });
 })();
 </script>
 

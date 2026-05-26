@@ -1,0 +1,13 @@
+# 本地使用，放宽限制
+[botdetection.ip_limit]
+# 每IP最多300次搜索/分钟（本地调用用）
+link_token = true
+
+[botdetection.ip_lists]
+pass_ip = [
+  "127.0.0.1",
+  "::1",
+  "192.168.0.0/16",
+  "10.0.0.0/8",
+  "172.16.0.0/12",
+]

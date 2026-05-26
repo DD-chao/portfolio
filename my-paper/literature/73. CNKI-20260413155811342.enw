@@ -1,0 +1,17 @@
+%0 Journal Article
+%A 高广尚
+%+ 桂林理工大学商学院;
+%T 用户画像构建方法研究综述
+%J 数据分析与知识发现
+%D 2019
+%V 3
+%N 03
+%K 用户画像;本体;主题;兴趣;行为日志
+%X 【目的】从设计与思维和数据类型两个角度分别探讨用户画像构建过程的机制。【文献范围】在Google Scholar和CNKI中分别以关键词"User Personas"、"User Profiles"和"用户画像"进行文献检索,再结合主题筛选,精读并使用追溯法获得用户画像研究的代表性文献共90篇。【方法】从设计思维角度研究画像的构建过程,具体结合目标导向、角色导向、参与导向、虚构导向这4个视角进行探讨分析;从数据类型角度研究画像的构建过程,具体结合本体或概念、主题或话题、兴趣或偏好、行为或日志、多维或融合这些概念进行探讨分析;对所述构建方法从逻辑思路、性能特点和局限性三个方面进行详细比较,最后对用户画像研究亟需解决的问题进行展望。【结果】用户画像技术在网络舆情治理、广告营销和个性化服务等诸多领域起着至关重要的作用。【局限】没有深入分析各用户画像算法的评价指标。【结论】尽管现有的用户画像构建方法能在一定程度上满足诸多应用的需求,但在大数据时代仍面临数据稀疏性、场景智能感知和用户兴趣迁移等挑战。
+%P 25-35
+%@ 2096-3467
+%L 10-1478/G2
+%U https://kns.cnki.net/kcms2/article/abstract?v=JRmhR0Lfi26AvbN0HCghE6TFHnwgUvuwCJsC6UkKEM7Al9f9rsU-Qjx1F0axesmJZlflkST8mj5To-XiGPr1nPq1tknjXs7yRlF2HKf3xluV-zrSf5cYjzVDaIKXTvznNPzFM9mkt9Zvky6N1os-6Ca7702LMcq3FvC2Z-tJWtBVep1hNAanUWQEPUmIbmgL&uniplatform=NZKPT&language=CHS
+%W CNKI
+
+ 

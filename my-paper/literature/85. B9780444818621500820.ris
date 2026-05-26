@@ -1,0 +1,20 @@
+TY  - CHAP
+T1  - Chapter 16 - What do Prototypes Prototype?
+AU  - Houde, Stephanie
+AU  - Hill, Charles
+A2  - Helander, Marting G.
+A2  - Landauer, Thomas K.
+A2  - Prabhu, Prasad V.
+BT  - Handbook of Human-Computer Interaction (Second Edition)
+PB  - North-Holland
+CY  - Amsterdam
+SP  - 367
+EP  - 381
+PY  - 1997
+DA  - 1997/01/01/
+SN  - 978-0-444-81862-1
+DO  - https://doi.org/10.1016/B978-044481862-1.50082-0
+UR  - https://www.sciencedirect.com/science/article/pii/B9780444818621500820
+AB  - Publisher Summary
+Prototypes are widely recognized to be a core means of exploring and expressing designs for interactive computer artifacts. Choosing the right kind of more focused prototype to build is an art in itself, and communicating its limited purposes to its various audiences is a critical aspect of its use. Current terminology for describing prototypes centers on attributes of prototypes themselves that can be distracting. Tools can be used in many different ways, and detail is not a sure indicator of completion. This chapter proposes a change in the language used to talk about prototypes, to focus more on fundamental questions about the interactive system being designed. The goal of this chapter is to establish a model that describes any prototype in terms of the artifact being designed rather than the prototype's incidental attributes. By focusing on the purpose of the prototype—that is, what it prototypes—better decisions can be made about the kinds of prototypes to build. With a clear purpose for each prototype, prototypes can be better used to think and communicate about design. This chapter begins by describing current difficulties in communicating about prototypes: the complexity of interactive systems; issues of multi-disciplinary teamwork; and the audiences of prototypes. The chapter introduces the model and illustrates it with some initial examples of prototypes from real projects. The chapter concludes with a summary of the main implications of the model for prototyping practice.
+ER  - 

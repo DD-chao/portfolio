@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-Agent 学术文献研究助手 — 作品集</title>
+<style>
+  :root { --bg: #fafaf8; --card: #fff; --text: #333; --muted: #888;
+          --accent: #2563eb; --border: #e5e5e5; --radius: 10px; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+  .hero { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color:#fff; padding:80px 40px; text-align:center; }
+  .hero h1 { font-size:2.4em; margin-bottom:12px; }
+  .hero p { font-size:1.1em; color:#cbd5e1; max-width:640px; margin:0 auto; }
+  .hero .tags { margin-top:20px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .hero .tag { background:rgba(255,255,255,0.12); padding:6px 16px; border-radius:20px; font-size:0.85em; }
+  section { max-width:960px; margin:50px auto; padding:0 24px; }
+  h2 { font-size:1.5em; margin-bottom:20px; padding-bottom:8px; border-bottom:2px solid var(--accent); display:inline-block; }
+  h3 { font-size:1.1em; margin:20px 0 10px; }
+
+  .pipeline { display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap; margin:30px 0; }
+  .agent-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; width:240px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); }
+  .agent-card .icon { font-size:2em; margin-bottom:8px; }
+  .agent-card .name { font-weight:700; margin-bottom:6px; }
+  .agent-card .role { font-size:0.82em; color:var(--muted); }
+  .arrow { font-size:1.5em; color:var(--muted); }
+  .agent-card .io { font-size:0.75em; color:var(--muted); margin-top:10px; border-top:1px solid var(--border); padding-top:8px; }
+
+  .compare { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .compare .col { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; }
+  .compare .col.old { border-left:4px solid #ef4444; }
+  .compare .col.new { border-left:4px solid #22c55e; }
+  .compare h4 { margin-bottom:10px; }
+  .compare ul { margin-left:18px; font-size:0.9em; }
+  .compare li { margin-bottom:4px; }
+
+  .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .metric { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; text-align:center; }
+  .metric .num { font-size:2em; font-weight:700; color:var(--accent); }
+  .metric .label { font-size:0.82em; color:var(--muted); margin-top:4px; }
+
+  .demo-block { background:#1e1e1e; color:#d4d4d4; border-radius:var(--radius); padding:24px; font-family:"Fira Code","Consolas",monospace; font-size:0.85em; line-height:1.8; overflow-x:auto; white-space:pre; }
+
+  .insight-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .insight-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; }
+  .insight-card .title { font-weight:700; margin-bottom:6px; color:var(--accent); }
+
+  footer { text-align:center; padding:40px; color:var(--muted); font-size:0.85em; }
+  @media (max-width:768px) { .compare, .metrics, .insight-row { grid-template-columns:1fr; } .pipeline { flex-direction:column; } .arrow { transform:rotate(90deg); } }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Multi-Agent 学术文献研究助手</h1>
+  <p>将传统的手工文献检索流程，重构为由三个专职 AI Agent 协作的自动化研究系统</p>
+  <div class="tags">
+    <span class="tag">Agent 架构设计</span>
+    <span class="tag">Multi-Agent 协作</span>
+    <span class="tag">向量知识库</span>
+    <span class="tag">跨语言语义搜索</span>
+    <span class="tag">AI 辅助开发</span>
+  </div>
+</div>
+
+<section>
+  <h2>问题发现</h2>
+  <p>作为一名工业设计/人因工程研究者，我的日常文献调研流程是：</p>
+  <div class="compare" style="margin-top:16px;">
+    <div class="col old">
+      <h4>❌ 原本的工作流</h4>
+      <ul>
+        <li>手动打开 PubMed、Google Scholar、Crossref 切换搜索</li>
+        <li>中文提问要自己翻译成英文关键词</li>
+        <li>逐篇打开 PDF 读摘要、判断相关性</li>
+        <li>手动翻译英文摘要并提炼要点</li>
+        <li>搜索 20 篇论文 → 产出 5 篇精炼 → 耗时 40-60 分钟</li>
+      </ul>
+    </div>
+    <div class="col new">
+      <h4>✅ 重构后的工作流</h4>
+      <ul>
+        <li>终端输入一行中文研究问题</li>
+        <li>系统自动翻译关键词，并行搜索 5 个学术数据库</li>
+        <li>AI 自动去重、评估相关性、保留前 8 篇</li>
+        <li>自动翻译摘要、提取 3-5 条核心要点</li>
+        <li>搜索 23 篇论文 → 产出 8 篇精炼 JSON → 耗时 40 秒</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>系统架构</h2>
+  <p>设计核心原则：<strong>每个 Agent 只做一件事</strong>。通过结构化 JSON 通信，不靠自然语言闲聊。</p>
+
+  <div class="pipeline">
+    <div class="agent-card">
+      <div class="icon">🔍</div>
+      <div class="name">搜索 Agent</div>
+      <div class="role">SearchAgent</div>
+      <div class="io">输入：用户自然语言问题<br>输出：本地 8 篇 + 外部 15 篇</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="agent-card">
+      <div class="icon">🔎</div>
+      <div class="name">筛选 Agent</div>
+      <div class="role">FilterAgent</div>
+      <div class="io">输入：23 篇论文列表<br>输出：去重 + 评分，保留 8 篇</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="agent-card">
+      <div class="icon">✍️</div>
+      <div class="name">提炼 Agent</div>
+      <div class="role">ExtractAgent</div>
+      <div class="io">输入：8 篇高相关论文<br>输出：翻译 + 3-5 条要点JSON</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:center;gap:40px;margin-top:20px;flex-wrap:wrap;">
+    <div style="text-align:center;">
+      <div style="color:var(--muted);font-size:0.8em;margin-bottom:4px;">数据来源</div>
+      <div style="font-size:0.9em;">📚 本地向量库 ChromaDB<br>🌐 SearXNG × 5 学术引擎</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="color:var(--muted);font-size:0.8em;margin-bottom:4px;">AI 模型</div>
+      <div style="font-size:0.9em;">🧠 DeepSeek-V3 (LLM)<br>🎯 BGE-M3 (Embedding)</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="color:var(--muted);font-size:0.8em;margin-bottom:4px;">实现方式</div>
+      <div style="font-size:0.9em;">💻 Python<br>🤖 Claude Code 辅助开发<br>📐 架构 & Prompt 本人设计</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>关键设计决策</h2>
+  <div class="insight-row">
+    <div class="insight-card">
+      <div class="title">为什么拆成 3 个 Agent？</div>
+      <p>单 Agent Prompt 要求"翻译 + 筛选 + 提炼"时输出不稳定。拆分后每个 Prompt 职责单一，两次运行判断一致。</p>
+    </div>
+    <div class="insight-card">
+      <div class="title">为什么用结构化通信？</div>
+      <p>Agent 之间传 JSON 而非自然语言。避免理解偏差和错误累积，确保筛选 Agent 的评分能被提炼 Agent 精确读取。</p>
+    </div>
+    <div class="insight-card">
+      <div class="title">中文→英文搜索优化</div>
+      <p>发现中文直接发给英文学术引擎搜不到相关论文。在 Search Agent 中加入自动翻译节点，中文提问自动转英文关键词。</p>
+    </div>
+    <div class="insight-card">
+      <div class="title">中英跨语言知识库</div>
+      <p>本地 830+ 篇 PDF 以英文为主，用户用中文提问。通过 BGE-M3 多语言 Embedding 模型实现同一语义空间内的跨语言检索。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>效果验证</h2>
+  <div class="metrics">
+    <div class="metric"><div class="num">40秒</div><div class="label">单次调研耗时（原 40-60 分钟）</div></div>
+    <div class="metric"><div class="num">5→1</div><div class="label">数据库切换次数</div></div>
+    <div class="metric"><div class="num">23→8</div><div class="label">自动筛选精度</div></div>
+    <div class="metric"><div class="num">830+</div><div class="label">可检索本地论文</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>运行演示</h2>
+  <div class="demo-block">$ python research.py "动态办公椅对腰椎姿势与竖脊肌肌肉激活的影响"
+
+🔍 [搜索Agent] 正在搜索: 动态办公椅对腰椎姿势与竖脊肌肌肉激活的影响
+   本地 8 篇 + 外部 15 篇 = 23 篇
+🔎 [筛选Agent] 正在筛选 23 篇论文...
+   保留 8 篇（相关度 ≥ 0.6）
+✍️  [提炼Agent] 正在翻译 8 篇论文...
+   完成！
+
+═══════════════════════════════════════════════
+研究问题: 动态办公椅对腰椎姿势与竖脊肌肌肉激活的影响
+搜索 23 篇 → 筛选保留 8 篇 → 翻译提炼完成
+═══════════════════════════════════════════════
+
+... [8 篇论文的标题翻译、摘要翻译、核心要点] ...
+
+[6] 站立与三种椅子坐姿下竖脊肌积分肌电活动与腰椎曲度的比较
+    研究监测竖脊肌积分肌电活动和腰椎曲度，比较 Balans多动椅、
+    办公椅、直背椅三种椅子在静态/动态姿势及站立时的差异。
+    核心要点:
+      1. 方法学：采用肌电与脊柱曲度同步测量评估不同座椅生物力学表现
+      2. 关键发现：动态椅显著改变竖脊肌激活模式与腰椎曲度
+      3. 临床意义：为腰背疼痛患者提供座椅选择依据</div>
+</section>
+
+<section>
+  <h2>项目文档</h2>
+  <p>完整架构文档、配置指南、修改指南见
+  <a href="ARCHITECTURE.md">ARCHITECTURE.md</a></p>
+</section>
+
+<footer>
+  &copy; 2026 — 作品集项目 — Multi-Agent 学术文献研究助手
+</footer>
+
+</body>
+</html>
